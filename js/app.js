@@ -109,12 +109,12 @@ function lastRow (){
   tr.appendChild(td);
 
   for(var i = 0 ; i < columnTotal.length -1; i++){
-    var td = document.createElement('td');
+    td = document.createElement('td');
     td.textContent = columnTotal[i];
     tr.appendChild(td);
   }
   var totalsum =0;
-  var td = document.createElement('td');
+  td = document.createElement('td');
   for (let i = 0; i < totaltotal.length; i++) {
     totalsum = totalsum + totaltotal[i];
   }
