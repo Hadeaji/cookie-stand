@@ -33,14 +33,14 @@ function tablehead(){
 tablehead();
 
 
-function Location(Name, MinCustPHour, MaxCustPHour, avgCookPCust, OpenningTime) {
+function Location(Name, MinCustPHour, MaxCustPHour, avgCookPCust) {
   this.name = Name;
   this.theMinCust_hour = MinCustPHour;
   this.theMaxCust_hour = MaxCustPHour;
   this.avgCookie_Cust = avgCookPCust;
   this.OpenTime = 6;
   this.CloseTime = 20;
-  this.workTime = OpenningTime;
+  this.workTime = 'From 6:00AM To 8:00PM';
   this.custPerHour = [];
   this.cookiesPerHour = [];
   this.totalCookies = 0;
@@ -75,7 +75,6 @@ Location.prototype.getotal = function(){
   totalval = total(this.cookiesPerHour);
   this.totalCookies = totalval;
   totaltotal.push(totalval);
-  return this.totalCookies;
 };
 
 // tabel contant
@@ -124,11 +123,11 @@ function lastRow (){
 
 }
 
-var location1 = new Location('Seattle',23,65,6.3,'From 6:00AM To 8:00PM');
-var location2 = new Location('Tokyo',3,24,1.2,'From 6:00AM To 8:00PM');
-var location3 = new Location('Dubai',11,38,3.7,'From 6:00AM To 8:00PM');
-var location4 = new Location('Paris',20,38,2.3,'From 6:00AM To 8:00PM');
-var location5 = new Location('Lima',2,16,4.6,'From 6:00AM To 8:00PM');
+var location1 = new Location('Seattle',23,65,6.3);
+var location2 = new Location('Tokyo',3,24,1.2);
+var location3 = new Location('Dubai',11,38,3.7);
+var location4 = new Location('Paris',20,38,2.3);
+var location5 = new Location('Lima',2,16,4.6);
 
 for (var i =0; i < locations.length ; i++){
   locations[i].getinfo();
@@ -137,7 +136,6 @@ for (var i =0; i < locations.length ; i++){
   locations[i].renderMid();
 
 }
-
 lastRow();
 
 //outers
@@ -163,4 +161,36 @@ function customersPerHour(min, max) {
   random = (random * (max - min + 1)) + min;
   random = Math.floor(random);
   return random;
+}
+
+
+var form = document.getElementById('form1');
+
+form.addEventListener('submit', ha);
+
+function ha(event){
+  event.preventDefault();
+
+
+  var table = document.getElementById('MainTable');
+  var rowCount = table.rows.length;
+
+  table.deleteRow(rowCount -1);
+
+
+  var name = event.target.locname.value;
+  var addmincustph = event.target.minCustPerHour.value;
+  var addmaxcustph = event.target.maxCustPerHour.value;
+  var addaverage = event.target.avgCookiePerCust.value;
+
+  var addLocation = new Location (name , addmincustph , addmaxcustph , addaverage);
+
+  addLocation.getinfo();
+  addLocation.getcookie();
+  addLocation.getotal();
+  addLocation.renderMid();
+
+
+  lastRow();
+
 }
