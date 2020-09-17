@@ -21,6 +21,10 @@
     top: 7%;
 left: 17%;}
 
+form {margin-left: 20%;
+margin-top: 5%;}
+
+#mai {font-size: 20px;}
 #board { position: absolute;
     z-index: -1;
     left: 15%;
@@ -38,7 +42,6 @@ h1 {font-family: 'Dancing Script', cursive;
 }
 a { z-index: 5;
     display: block;
-    width: 10%;
     background-color: #f1f1f1;
     padding: 8px 16px;
     text-decoration: none;
@@ -100,12 +103,13 @@ display: inline-block;}
 .all {display: inline-block;
 
 }
-#ooo {display: inline-block;}
+#ooo {display: inline-block;
+margin-left: 15%;}
 
 #contact {font-family: 'Lobster';
     font-size: 150%;
 display: inline-block;
-    margin-left: 75%;
+    margin-left: 63%;
 
 }
 
@@ -117,7 +121,7 @@ tr:hover {background-color: #f5f5f5;}
 
 table { 
     text-align: center;
-    margin-left: 25%;
+    margin-left: 20%;
 }
 th {
     background-color: brown;
@@ -132,3 +136,32 @@ width: 20%;
 height: 20%;
 
   }
+#ul{position: fixed;
+    left: 80%;}
+  #top { position: absolute;
+    z-index: -2;
+    left: 3%;
+    top: 5%;
+    width: 94%;
+    border-radius: 15px;
+}
+#mid { position: absolute;
+    z-index: -2;
+    left: 3%;
+    top: 35%;
+    width: 94%;
+    height: 258%;
+}
+#bot { position: absolute;
+    z-index: -2;
+    left: 3%;
+    top: 265%;
+    width: 94%;
+    border-radius: 15px;
+}
+
+body {
+    background-image: url(/imgs/back.jpg);
+    background-repeat: repeat-y;
+}
+
